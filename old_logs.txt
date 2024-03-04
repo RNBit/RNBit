@@ -1,0 +1,25 @@
+tgcf
+Running latest tgcf version 1.1.8
+
+
+[03/04/24 09:49:54] INFO     Verbosity turned on! This is suitable for debugging                                                                               cli.py:57
+                    INFO     cryptg detected, it will be used for encryption                                                                                   aes.py:19
+[03/04/24 09:49:56] INFO     tgcf.config.json detected!                                                                                                    config.py:109
+                    INFO     config.py got executed                                                                                                        config.py:259
+[03/04/24 09:49:57] INFO     First party plugin filter loaded!                                                                                            __init__.py:82
+                    INFO     check=True users=FilterList(blacklist=[], whitelist=[]) files=FilesFilterList(blacklist=[<FileType.CONTACT: 'contact'>,        filter.py:17
+                             <FileType.STICKER: 'sticker'>, <FileType.VIDEO_NOTE: 'video_note'>, <FileType.VIDEO: 'video'>, <FileType.GIF: 'gif'>,                      
+                             <FileType.AUDIO: 'audio'>, <FileType.DOCUMENT: 'document'>], whitelist=[<FileType.PHOTO: 'photo'>])                                        
+                             text=TextFilter(blacklist=['join', 'https:/t.me/*'], whitelist=['/USDT', 'Long', 'Short', 'Target', 'Entry', 'SL', 'Stoploss',             
+                             'Stop', 'Tp', 'Lev', 'Lv'], case_sensitive=True, regex=True)                                                                               
+                    INFO     Loaded plugin filter                                                                                                         __init__.py:98
+                    INFO     First party plugin mark loaded!                                                                                              __init__.py:82
+                    INFO     Loaded plugin mark                                                                                                           __init__.py:98
+                    INFO     First party plugin replace loaded!                                                                                           __init__.py:82
+                    INFO     check=True text={} text_raw='\n' regex=False                                                                                  replace.py:16
+                    INFO     Loaded plugin replace                                                                                                        __init__.py:98
+                    INFO     First party plugin caption loaded!                                                                                           __init__.py:82
+                    INFO     check=True header='#RNBit vip•room' footer=''                                                                                 caption.py:11
+                    INFO     Loaded plugin caption                                                                                                        __init__.py:98
+                    INFO     using bot account                                                                                                             config.py:215
+                    INFO     Connecting to 149.154.167.51:443/TcpFull...                                                                            mtprotosender.py:226

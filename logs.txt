@@ -1,0 +1,124 @@
+tgcf
+Running latest tgcf version 1.1.8
+
+
+[03/04/24 09:50:24] INFO     Verbosity turned on! This is suitable for debugging                                                                               cli.py:57
+                    INFO     cryptg detected, it will be used for encryption                                                                                   aes.py:19
+[03/04/24 09:50:25] INFO     tgcf.config.json detected!                                                                                                    config.py:109
+                    INFO     config.py got executed                                                                                                        config.py:259
+                    INFO     First party plugin filter loaded!                                                                                            __init__.py:82
+                    INFO     check=True users=FilterList(blacklist=[], whitelist=[]) files=FilesFilterList(blacklist=[<FileType.CONTACT: 'contact'>,        filter.py:17
+                             <FileType.STICKER: 'sticker'>, <FileType.VIDEO_NOTE: 'video_note'>, <FileType.VIDEO: 'video'>, <FileType.GIF: 'gif'>,                      
+                             <FileType.AUDIO: 'audio'>, <FileType.DOCUMENT: 'document'>], whitelist=[<FileType.PHOTO: 'photo'>])                                        
+                             text=TextFilter(blacklist=['join', 'https:/t.me/*'], whitelist=['/USDT', 'Long', 'Short', 'Target', 'Entry', 'SL', 'Stoploss',             
+                             'Stop', 'Tp', 'Lev', 'Lv'], case_sensitive=True, regex=True)                                                                               
+                    INFO     Loaded plugin filter                                                                                                         __init__.py:98
+                    INFO     First party plugin mark loaded!                                                                                              __init__.py:82
+                    INFO     Loaded plugin mark                                                                                                           __init__.py:98
+                    INFO     First party plugin replace loaded!                                                                                           __init__.py:82
+                    INFO     check=True text={} text_raw='\n' regex=False                                                                                  replace.py:16
+                    INFO     Loaded plugin replace                                                                                                        __init__.py:98
+                    INFO     First party plugin caption loaded!                                                                                           __init__.py:82
+                    INFO     check=True header='#RNBit vip•room' footer=''                                                                                 caption.py:11
+                    INFO     Loaded plugin caption                                                                                                        __init__.py:98
+                    INFO     using bot account                                                                                                             config.py:215
+[03/04/24 09:50:26] INFO     Connecting to 149.154.167.51:443/TcpFull...                                                                            mtprotosender.py:226
+[03/04/24 09:50:36] WARNING  Attempt 1 at connecting failed: TimeoutError:                                                                          mtprotosender.py:286
+[03/04/24 09:50:48] WARNING  Attempt 2 at connecting failed: TimeoutError:                                                                          mtprotosender.py:286
+[03/04/24 09:50:59] WARNING  Attempt 3 at connecting failed: TimeoutError:                                                                          mtprotosender.py:286
+[03/04/24 09:51:10] WARNING  Attempt 4 at connecting failed: TimeoutError:                                                                          mtprotosender.py:286
+[03/04/24 09:51:21] WARNING  Attempt 5 at connecting failed: TimeoutError:                                                                          mtprotosender.py:286
+[03/04/24 09:51:32] WARNING  Attempt 6 at connecting failed: TimeoutError:                                                                          mtprotosender.py:286
+╭─────────────────────────────── Traceback (most recent call last) ────────────────────────────────╮
+│ /home/kill/.local/lib/python3.11/site-packages/tgcf/cli.py:120 in main                           │
+│                                                                                                  │
+│   117 │   else:                                                                                  │
+│   118 │   │   from tgcf.live import start_sync  # pylint: disable=import-outside-toplevel        │
+│   119 │   │                                                                                      │
+│ ❱ 120 │   │   asyncio.run(start_sync())                                                          │
+│   121                                                                                            │
+│   122                                                                                            │
+│   123 # AAHNIK 2021                                                                              │
+│                                                                                                  │
+│ /usr/lib/python3.11/asyncio/runners.py:190 in run                                                │
+│                                                                                                  │
+│   187 │   │   │   "asyncio.run() cannot be called from a running event loop")                    │
+│   188 │                                                                                          │
+│   189 │   with Runner(debug=debug) as runner:                                                    │
+│ ❱ 190 │   │   return runner.run(main)                                                            │
+│   191                                                                                            │
+│   192                                                                                            │
+│   193 def _cancel_all_tasks(loop):                                                               │
+│                                                                                                  │
+│ /usr/lib/python3.11/asyncio/runners.py:118 in run                                                │
+│                                                                                                  │
+│   115 │   │                                                                                      │
+│   116 │   │   self._interrupt_count = 0                                                          │
+│   117 │   │   try:                                                                               │
+│ ❱ 118 │   │   │   return self._loop.run_until_complete(task)                                     │
+│   119 │   │   except exceptions.CancelledError:                                                  │
+│   120 │   │   │   if self._interrupt_count > 0:                                                  │
+│   121 │   │   │   │   uncancel = getattr(task, "uncancel", None)                                 │
+│                                                                                                  │
+│ /usr/lib/python3.11/asyncio/base_events.py:654 in run_until_complete                             │
+│                                                                                                  │
+│    651 │   │   if not future.done():                                                             │
+│    652 │   │   │   raise RuntimeError('Event loop stopped before Future completed.')             │
+│    653 │   │                                                                                     │
+│ ❱  654 │   │   return future.result()                                                            │
+│    655 │                                                                                         │
+│    656 │   def stop(self):                                                                       │
+│    657 │   │   """Stop running the event loop.                                                   │
+│                                                                                                  │
+│ /home/kill/.local/lib/python3.11/site-packages/tgcf/live.py:133 in start_sync                    │
+│                                                                                                  │
+│   130 │   │   if CONFIG.login.BOT_TOKEN == "":                                                   │
+│   131 │   │   │   logging.warning("Bot token not found, but login type is set to bot.")          │
+│   132 │   │   │   sys.exit()                                                                     │
+│ ❱ 133 │   │   await client.start(bot_token=CONFIG.login.BOT_TOKEN)                               │
+│   134 │   else:                                                                                  │
+│   135 │   │   await client.start()                                                               │
+│   136 │   config.is_bot = await client.is_bot()                                                  │
+│                                                                                                  │
+│ /home/kill/.local/lib/python3.11/site-packages/telethon/client/auth.py:141 in _start             │
+│                                                                                                  │
+│   138 │   │   │   self: 'TelegramClient', phone, password, bot_token, force_sms,                 │
+│   139 │   │   │   code_callback, first_name, last_name, max_attempts):                           │
+│   140 │   │   if not self.is_connected():                                                        │
+│ ❱ 141 │   │   │   await self.connect()                                                           │
+│   142 │   │                                                                                      │
+│   143 │   │   # Rather than using `is_user_authorized`, use `get_me`. While this is              │
+│   144 │   │   # more expensive and needs to retrieve more data from the server, it               │
+│                                                                                                  │
+│ /home/kill/.local/lib/python3.11/site-packages/telethon/client/telegrambaseclient.py:526 in      │
+│ connect                                                                                          │
+│                                                                                                  │
+│   523 │   │   │   │   except OSError:                                                            │
+│   524 │   │   │   │   │   print('Failed to connect')                                             │
+│   525 │   │   """                                                                                │
+│ ❱ 526 │   │   if not await self._sender.connect(self._connection(                                │
+│   527 │   │   │   self.session.server_address,                                                   │
+│   528 │   │   │   self.session.port,                                                             │
+│   529 │   │   │   self.session.dc_id,                                                            │
+│                                                                                                  │
+│ /home/kill/.local/lib/python3.11/site-packages/telethon/network/mtprotosender.py:132 in connect  │
+│                                                                                                  │
+│   129 │   │   │   │   return False                                                               │
+│   130 │   │   │                                                                                  │
+│   131 │   │   │   self._connection = connection                                                  │
+│ ❱ 132 │   │   │   await self._connect()                                                          │
+│   133 │   │   │   self._user_connected = True                                                    │
+│   134 │   │   │   return True                                                                    │
+│   135                                                                                            │
+│                                                                                                  │
+│ /home/kill/.local/lib/python3.11/site-packages/telethon/network/mtprotosender.py:258 in _connect │
+│                                                                                                  │
+│   255 │   │   │   break  # all steps done, break retry loop                                      │
+│   256 │   │   else:                                                                              │
+│   257 │   │   │   if not connected:                                                              │
+│ ❱ 258 │   │   │   │   raise ConnectionError('Connection to Telegram failed {} time(s)'.format(   │
+│   259 │   │   │                                                                                  │
+│   260 │   │   │   e = ConnectionError('auth_key generation failed {} time(s)'.format(self._ret   │
+│   261 │   │   │   await self._disconnect(error=e)                                                │
+╰──────────────────────────────────────────────────────────────────────────────────────────────────╯
+ConnectionError: Connection to Telegram failed 5 time(s)
